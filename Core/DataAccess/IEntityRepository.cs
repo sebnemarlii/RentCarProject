@@ -9,9 +9,7 @@ namespace Core.DataAccess.EntityFramework
     public interface IEntityRepository<T> where T:class,IEntity,new()
     {
         List<T> GetAll(Expression<Func<T,bool>> filter=null);
-        List<T> GetById(string id);
-        List<T> GetByBrandId(string id);
-        List<T> GetByColorId(string id);
+        T Get(Expression<Func<T, bool>> filter=null);
         void Add(T entity);
         void Update(T entity);
         void Delete(T entity);

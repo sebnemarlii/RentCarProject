@@ -11,9 +11,9 @@ namespace ConsoleUI
         static void Main(string[] args)
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            foreach (var car in carManager.GetAll())
+            foreach (var car in carManager.GetCarDetails().Data)
             {
-                Console.WriteLine(car.CarId);
+                Console.WriteLine(car);
             }
 
             //Console.WriteLine("Eklemek istediğiniz arabanın bilgileri:");
